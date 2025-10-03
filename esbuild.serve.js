@@ -1,16 +1,16 @@
-import * as esbuild from 'esbuild';
+import * as esbuild from "esbuild";
 
 const ctx = await esbuild.context({
-  entryPoints: ['examples/index.ts'],
+  entryPoints: ["examples/index.ts"],
   bundle: true,
-  outfile: 'examples/index.js',
+  outfile: "examples/index.js",
   sourcemap: true,
-  format: 'esm',
+  format: "esm",
 });
 
 await ctx.watch();
 const { host, port } = await ctx.serve({
-  servedir: 'examples',
+  servedir: "examples",
   port: 3000,
 });
 
